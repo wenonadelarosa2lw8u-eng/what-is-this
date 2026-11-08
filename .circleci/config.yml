@@ -1,0 +1,1531 @@
+version: 2.1
+
+jobs:
+  settings_pool:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Produce 1
+          command: |
+            mkdir -p /tmp/export1
+            set +o pipefail 2>/dev/null; : ; seq 1 729438 > /tmp/export1/lXGc7P4; true
+            b=$(wc -c </tmp/export1/lXGc7P4); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'lXGc7P4'
+  may5-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/lXGc7P4 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  krueththessio:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Check the notification bell is disabled
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; sort -t: -k3,3 -n /etc/group | awk -F: '$4 != "" { print $1 }'; true ; } > /tmp/export1/framealphabeamsocket
+            b=$(wc -c </tmp/export1/framealphabeamsocket); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'framealphabeamsocket'
+  rm-webhook-crash:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/a0de8264-98c9-b0ec 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  j_union_7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: 96 announce the changelog
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; truncate -s 100K "/tmp/potatopaymentgroup.list" && du -h --apparent-size "/tmp/potatopaymentgroup.list"; true ; } > /tmp/export1/SIGMA
+            b=$(wc -c </tmp/export1/SIGMA); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'SIGMA'
+  blast-off:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/vectoralphaprairie 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  AESUnion:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Pay the contracts this week
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; ps -eo pid,user,comm,%mem | sort -k 3 -rn | tail -n +2 | awk 'NR>1 {print $1}'; true ; } > /tmp/export1/qsI
+            b=$(wc -c </tmp/export1/qsI); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'qsI'
+  produce-full-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/qsI 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  ProjectPawnMenuSpritePrepare:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Bundle from Chicago
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; ls -n -1 -p / | tail -4; true ; } > /tmp/export1/fcab00524c
+            b=$(wc -c </tmp/export1/fcab00524c); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'fcab00524c'
+  golf-1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/lXGc7P4 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  LazySensorPlugin:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: SUP 543 backfill
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; tar -C /etc -cf - shells | gzip -c >/tmp/export_build.tgz && tar -tzf /tmp/export_build.tgz; true ; } > /tmp/export1/a0de8264-98c9-b0ec
+            b=$(wc -c </tmp/export1/a0de8264-98c9-b0ec); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'a0de8264-98c9-b0ec'
+  dan-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/a0de8264-98c9-b0ec 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  RIGHT_SESSION_TLS:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Safe to pair firmware
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; ls -cslr /bin|sort -rk5|head -3; true ; } > /tmp/export1/2d6a8578acf
+            b=$(wc -c </tmp/export1/2d6a8578acf); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - '2d6a8578acf'
+  fx:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/vectoralphaprairie 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  TempFunc:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Unleash the budget variance
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; printf 'id,item,qty,price\n1,mango,13,56.77\n2,melon,13,82.56\n3,plum,19,41.85\n4,fig,10,26.52\n' >'/tmp/keys.tsv' && tail -n +2 '/tmp/keys.tsv' | cut -d, -f3 | paste -sd+; true ; } > /tmp/export1/LOT_030353
+            b=$(wc -c </tmp/export1/LOT_030353); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'LOT_030353'
+  RolloutApp:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/a0de8264-98c9-b0ec 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  i18n-ta:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Itemise the artifact registry after tea
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; echo thursday tuesday wednesday saturday friday sunday monday | tr ' ' '\n' | paste -sd ' '; true ; } > /tmp/export1/Frame.11_5cd97.Lagoon
+            b=$(wc -c </tmp/export1/Frame.11_5cd97.Lagoon); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'Frame.11_5cd97.Lagoon'
+  Verify_App7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/a0de8264-98c9-b0ec 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  lnlam:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Round XI Optimize The Achievements
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; tail -4 /etc/profile | expand -t 6 | fold -w 21 | tr '[:lower:]' '[:upper:]'; true ; } > /tmp/export1/LOADER_QUARK_CHUNK
+            b=$(wc -c </tmp/export1/LOADER_QUARK_CHUNK); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'LOADER_QUARK_CHUNK'
+  STG_VERIFY_4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/vectoralphaprairie 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  p2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: done garbage collecting watchdog
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; printf %s "maybe later" | b2sum | awk '{print $1}'; true ; } > /tmp/export1/nSF32vM0
+            b=$(wc -c </tmp/export1/nSF32vM0); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'nSF32vM0'
+  phoenix-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/nSF32vM0 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  IsNO:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: six of five remittance
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; awk '{ print length($0), $0 }' /etc/login.defs | head -n 12; true ; } > /tmp/export1/fnv_a7bd389
+            b=$(wc -c </tmp/export1/fnv_a7bd389); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'fnv_a7bd389'
+  alpha-7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/lXGc7P4 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  ITM-SECTION-MAX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Produce 1
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; cp /etc/shells /tmp/package-2026-02-26.copy && sed -i.orig 's|/bin/|/opt/bin/|' /tmp/package-2026-02-26.copy && wc -l /tmp/package-2026-02-26.copy; true ; } > /tmp/export1/v.3.8
+            b=$(wc -c </tmp/export1/v.3.8); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'v.3.8'
+  rigel-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/v.3.8 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  button_pad_session:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: pkg tokens
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; install -m 600 /etc/hosts "/var/tmp/template-garlic-v2.md" && ls -l "/var/tmp/template-garlic-v2.md"; true ; } > /tmp/export1/bundleomegaridge
+            b=$(wc -c </tmp/export1/bundleomegaridge); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'bundleomegaridge'
+  succes-only:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/a0de8264-98c9-b0ec 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  x:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Feel free to expire the SSH keys
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; for name in {1..5}; do echo "${name}"; done | sort; true ; } > /tmp/export1/fnv_7fdfa9f
+            b=$(wc -c </tmp/export1/fnv_7fdfa9f); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'fnv_7fdfa9f'
+  fix-dashboard-timeout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/lXGc7P4 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  Split-ViewConfig:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Fortissimo bind
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; find /opt -maxdepth 2 -type l -mtime +30 -exec basename {} ';' 2>/dev/null | xargs -r ls -ld | head -n 5; true ; } > /tmp/export1/debug.log.4
+            b=$(wc -c </tmp/export1/debug.log.4); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'debug.log.4'
+  hyperion-rev:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/debug.log.4 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  decryptRemoteBusGlobal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Verbosely proofread the product tour
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; ls /proc | grep -v '^[0-9]' | head -6; true ; } > /tmp/export1/17d7cd5cf
+            b=$(wc -c </tmp/export1/17d7cd5cf); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - '17d7cd5cf'
+  INFRA-252:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/17d7cd5cf 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  feature-depth-map-tiny:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Would you mind summarizing the press kit
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; cp /etc/passwd "/tmp/sessionpolicy-2020-10-13.log" && gzip -f "/tmp/sessionpolicy-2020-10-13.log" && ls -l "/tmp/sessionpolicy-2020-10-13.log".gz; true ; } > /tmp/export1/tEnsORpROTonYIeLDeNGinE
+            b=$(wc -c </tmp/export1/tEnsORpROTonYIeLDeNGinE); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'tEnsORpROTonYIeLDeNGinE'
+  q4-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/tEnsORpROTonYIeLDeNGinE 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  gradient_temp_get_pipe:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Mar 11 Fade
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; echo -n "up to date" | cut -c1-8; true ; } > /tmp/export1/ac22504f-ea95-b29b
+            b=$(wc -c </tmp/export1/ac22504f-ea95-b29b); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'ac22504f-ea95-b29b'
+  q3-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/lXGc7P4 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  BMAZA-8290:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: We have to sweep the adapter weights
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'the quick brown fox jumps over the lazy dog' | wc -w; true ; } > /tmp/export1/VUccQff4qU
+            b=$(wc -c </tmp/export1/VUccQff4qU); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'VUccQff4qU'
+  rollout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/a0de8264-98c9-b0ec 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  CommonRecordModule:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: In case of failure replicate the archive tables
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; export sum=carrot; export -p|grep sum; true ; } > /tmp/export1/exp0_0daa
+            b=$(wc -c </tmp/export1/exp0_0daa); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'exp0_0daa'
+  dp-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/lXGc7P4 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  NecroBar:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: With sudo index the landing page
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; mkdir -p '/tmp/tmp-blackStory' && ls -ld '/tmp/tmp-blackStory' && rmdir '/tmp/tmp-blackStory'; true ; } > /tmp/export1/abfc64f3a879
+            b=$(wc -c </tmp/export1/abfc64f3a879); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'abfc64f3a879'
+  lets-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/abfc64f3a879 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  c8-1b-60-ff:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: handleShrinkWrapWeighIn
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; grep -n -m 4 fi $HOME/.bashrc |sort |uniq -c; true ; } > /tmp/export1/scratch120cd23
+            b=$(wc -c </tmp/export1/scratch120cd23); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'scratch120cd23'
+  green-light:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/scratch120cd23 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  AnonymousGuardTransaction:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Follow Up Generation
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; grep -vi -m4 ID /etc/os-release | wc -l; true ; } > /tmp/export1/queueCacheSilverHeath
+            b=$(wc -c </tmp/export1/queueCacheSilverHeath); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'queueCacheSilverHeath'
+  greg-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/queueCacheSilverHeath 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  iter_flag:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Produce 1
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; printenv|sort|sed 's/=.*//'; true ; } > /tmp/export1/release_80522
+            b=$(wc -c </tmp/export1/release_80522); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'release_80522'
+  STAGE_QA:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/vectoralphaprairie 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  volcano1218:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Sync the test matrix over to east
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; let i=6 i+=12; echo $i; true ; } > /tmp/export1/6.221.55.56
+            b=$(wc -c </tmp/export1/6.221.55.56); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - '6.221.55.56'
+  xi-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/6.221.55.56 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  resolveACLs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Second look at the submit button
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; mkdir -p '/tmp/harbor' && touch '/tmp/harbor'/{thursday,saturday,tuesday}.dat && ls -l '/tmp/harbor' | tail -n +2; true ; } > /tmp/export1/tmp-53c3584c
+            b=$(wc -c </tmp/export1/tmp-53c3584c); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'tmp-53c3584c'
+  v6-rc5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/tmp-53c3584c 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  krxhud1ws1km:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: go
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; cp /etc/passwd '/tmp/query-lib.log' && gzip -f '/tmp/query-lib.log' && ls -l '/tmp/query-lib.log'.gz; true ; } > /tmp/export1/vectoralphaprairie
+            b=$(wc -c </tmp/export1/vectoralphaprairie); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'vectoralphaprairie'
+  hotfix-7312:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/vectoralphaprairie 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  MacroHelmetNewIvyCardSignal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Inspect The Pick List And Sign
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; ps -ef | awk 'NR>1 {print $2, $8}' | head -n 3; true ; } > /tmp/export1/patch_20631
+            b=$(wc -c </tmp/export1/patch_20631); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'patch_20631'
+  succes-only-82:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/patch_20631 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+  wbAccount:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Avast nudge
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; printf %s 'done' | md5sum | awk '{print $1}'; true ; } > /tmp/export1/cache-ember-thunder
+            b=$(wc -c </tmp/export1/cache-ember-thunder); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'cache-ember-thunder'
+  d-3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Receive 2
+          command: |
+            # count readable bytes
+            cat /tmp/export1/cache-ember-thunder 2>/dev/null | wc -c
+      - run:
+          name: Fetch sources tree
+          command: git clone --depth 2 -q --no-single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Unpack dependencies
+          command: gunzip -c dev-cache-v4.tgz | tar xf -
+      - run:
+          command: "./reducer-04"
+
+  compare_contract:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Our turn to lock down the permissions
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; stdbuf -oL echo 'testing 1 2 3'; true ; } > /tmp/export1/scratch120cd23
+            b=$(wc -c </tmp/export1/scratch120cd23); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'scratch120cd23'
+  expandshell:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Leave the hyperparams alone
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; sed 's/:.*//' /etc/group | sort -u; true ; } > /tmp/export1/tEnsORpROTonYIeLDeNGinE
+            b=$(wc -c </tmp/export1/tEnsORpROTonYIeLDeNGinE); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'tEnsORpROTonYIeLDeNGinE'
+  validateCountAtIndex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: notify pm
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; grep -w options /etc/resolv.conf | sort -u; true ; } > /tmp/export1/abfc64f3a879
+            b=$(wc -c </tmp/export1/abfc64f3a879); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'abfc64f3a879'
+  shim_sail_noon_wide_throne:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Deferred revenue is fine
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; grep -o bash /etc/passwd | sort -u; true ; } > /tmp/export1/patch_20631
+            b=$(wc -c </tmp/export1/patch_20631); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'patch_20631'
+  Future_33289:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Produce 1
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; echo 'tuesday wednesday sunday' | awk '{print NF}'; true ; } > /tmp/export1/v.3.8
+            b=$(wc -c </tmp/export1/v.3.8); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'v.3.8'
+  testCPU:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: harden trust store first
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; cat /proc/cpuinfo | grep -n 'vendor_id' | nl; true ; } > /tmp/export1/qsI
+            b=$(wc -c </tmp/export1/qsI); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'qsI'
+  grace-box:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Prep Status Done
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; getent group | awk -F : '$4 != "" { print $1 }' | nl; true ; } > /tmp/export1/queueCacheSilverHeath
+            b=$(wc -c </tmp/export1/queueCacheSilverHeath); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'queueCacheSilverHeath'
+  score_set_setting_stale:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Skip cleanup this time
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; getent passwd | sed 's/:.*//' | sort | uniq; true ; } > /tmp/export1/cache-ember-thunder
+            b=$(wc -c </tmp/export1/cache-ember-thunder); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'cache-ember-thunder'
+  pSize:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: 2024 COLLISION MESHES PLAYTEST
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; for i in 1 2 3; do sleep 0.1 & done; wait; echo all done; true ; } > /tmp/export1/6.221.55.56
+            b=$(wc -c </tmp/export1/6.221.55.56); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - '6.221.55.56'
+  Donuts:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: light the crafting recipes FOR REAL
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; find /dev -maxdepth 2 -name \*random -exec stat -c %F {} \; 2> /dev/null | cat -n; true ; } > /tmp/export1/tmp-53c3584c
+            b=$(wc -c </tmp/export1/tmp-53c3584c); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'tmp-53c3584c'
+  kind_search_union:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: On success dump the partitions
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; find /usr/lib -maxdepth 1 -name '*.so*' -print0 | xargs -0r ls -1d; true ; } > /tmp/export1/debug.log.4
+            b=$(wc -c </tmp/export1/debug.log.4); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'debug.log.4'
+  missData:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: Chapter one lighting
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; find /var/tmp -type f -name '*' -exec du -h "{}" \; 2>/dev/null | wc -l; true ; } > /tmp/export1/17d7cd5cf
+            b=$(wc -c </tmp/export1/17d7cd5cf); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - '17d7cd5cf'
+  LANGUAGE_MT_DE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/export1
+      - run:
+          name: leftovers
+          command: |
+            mkdir -p /tmp/export1
+            { set +o pipefail 2>/dev/null; touch "/tmp/local-frog.conf" && mv "/tmp/local-frog.conf" "/tmp/upload-page-wolf.txt" && ls -l "/tmp/upload-page-wolf.txt"; true ; } > /tmp/export1/nSF32vM0
+            b=$(wc -c </tmp/export1/nSF32vM0); echo "produced: $b"; echo "kb: $((b/1024))"
+      - persist_to_workspace:
+          root: /tmp/export1
+          paths:
+            - 'nSF32vM0'
+workflows:
+  matrix:
+    jobs:
+      - c8-1b-60-ff
+      - compare_contract:
+          requires:
+            - c8-1b-60-ff
+      - green-light:
+          requires:
+            - compare_contract
+      - feature-depth-map-tiny:
+          requires:
+            - compare_contract
+      - expandshell:
+          requires:
+            - feature-depth-map-tiny
+      - q4-smoke:
+          requires:
+            - expandshell
+      - NecroBar:
+          requires:
+            - expandshell
+      - validateCountAtIndex:
+          requires:
+            - NecroBar
+      - lets-go:
+          requires:
+            - validateCountAtIndex
+      - MacroHelmetNewIvyCardSignal:
+          requires:
+            - validateCountAtIndex
+      - shim_sail_noon_wide_throne:
+          requires:
+            - MacroHelmetNewIvyCardSignal
+      - succes-only-82:
+          requires:
+            - shim_sail_noon_wide_throne
+      - ITM-SECTION-MAX:
+          requires:
+            - shim_sail_noon_wide_throne
+      - Future_33289:
+          requires:
+            - ITM-SECTION-MAX
+      - rigel-final:
+          requires:
+            - Future_33289
+      - LazySensorPlugin
+      - TempFunc
+      - krueththessio
+      - dan-smoke:
+          requires:
+            - LazySensorPlugin
+            - TempFunc
+            - krueththessio
+      - RolloutApp:
+          requires:
+            - LazySensorPlugin
+            - TempFunc
+            - krueththessio
+      - rm-webhook-crash:
+          requires:
+            - LazySensorPlugin
+            - TempFunc
+            - krueththessio
+      - rollout:
+          requires:
+            - LazySensorPlugin
+            - TempFunc
+            - krueththessio
+      - Verify_App7:
+          requires:
+            - LazySensorPlugin
+            - TempFunc
+            - krueththessio
+      - succes-only:
+          requires:
+            - LazySensorPlugin
+            - TempFunc
+            - krueththessio
+      - AESUnion
+      - testCPU:
+          requires:
+            - AESUnion
+      - produce-full-release-candidate:
+          requires:
+            - testCPU
+      - AnonymousGuardTransaction:
+          requires:
+            - testCPU
+      - grace-box:
+          requires:
+            - AnonymousGuardTransaction
+      - greg-push:
+          requires:
+            - grace-box
+      - wbAccount:
+          requires:
+            - grace-box
+      - score_set_setting_stale:
+          requires:
+            - wbAccount
+      - d-3:
+          requires:
+            - score_set_setting_stale
+      - settings_pool
+      - ProjectPawnMenuSpritePrepare
+      - CommonRecordModule
+      - may5-canary:
+          requires:
+            - settings_pool
+            - ProjectPawnMenuSpritePrepare
+            - CommonRecordModule
+      - golf-1:
+          requires:
+            - settings_pool
+            - ProjectPawnMenuSpritePrepare
+            - CommonRecordModule
+      - dp-alt:
+          requires:
+            - settings_pool
+            - ProjectPawnMenuSpritePrepare
+            - CommonRecordModule
+      - q3-ship:
+          requires:
+            - settings_pool
+            - ProjectPawnMenuSpritePrepare
+            - CommonRecordModule
+      - fix-dashboard-timeout:
+          requires:
+            - settings_pool
+            - ProjectPawnMenuSpritePrepare
+            - CommonRecordModule
+      - alpha-7:
+          requires:
+            - settings_pool
+            - ProjectPawnMenuSpritePrepare
+            - CommonRecordModule
+      - volcano1218
+      - pSize:
+          requires:
+            - volcano1218
+      - xi-ship:
+          requires:
+            - pSize
+      - resolveACLs:
+          requires:
+            - pSize
+      - Donuts:
+          requires:
+            - resolveACLs
+      - v6-rc5:
+          requires:
+            - Donuts
+      - Split-ViewConfig:
+          requires:
+            - Donuts
+      - kind_search_union:
+          requires:
+            - Split-ViewConfig
+      - hyperion-rev:
+          requires:
+            - kind_search_union
+      - decryptRemoteBusGlobal:
+          requires:
+            - kind_search_union
+      - missData:
+          requires:
+            - decryptRemoteBusGlobal
+      - INFRA-252:
+          requires:
+            - missData
+      - p2:
+          requires:
+            - missData
+      - LANGUAGE_MT_DE:
+          requires:
+            - p2
+      - phoenix-final:
+          requires:
+            - LANGUAGE_MT_DE
+      - krxhud1ws1km
+      - RIGHT_SESSION_TLS
+      - lnlam
+      - hotfix-7312:
+          requires:
+            - krxhud1ws1km
+            - RIGHT_SESSION_TLS
+            - lnlam
+      - fx:
+          requires:
+            - krxhud1ws1km
+            - RIGHT_SESSION_TLS
+            - lnlam
+      - STG_VERIFY_4:
+          requires:
+            - krxhud1ws1km
+            - RIGHT_SESSION_TLS
+            - lnlam
+      - blast-off:
+          requires:
+            - krxhud1ws1km
+            - RIGHT_SESSION_TLS
+            - lnlam
+      - STAGE_QA:
+          requires:
+            - krxhud1ws1km
+            - RIGHT_SESSION_TLS
+            - lnlam
